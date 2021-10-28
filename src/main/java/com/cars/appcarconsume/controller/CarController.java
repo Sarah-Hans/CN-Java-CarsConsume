@@ -28,9 +28,9 @@ public class CarController {
     }
 
 
-    @RequestMapping(value = "/consumer/cars/{id}", method = RequestMethod.POST)
-    public Object modifyCar(@RequestBody Object object, @PathVariable int id) {
-        this.restTemplate.put(url+"cars/update", object);
+    @RequestMapping(value = "/consumer/cars/{id}", method = RequestMethod.PUT)
+    public Object updateCar(@RequestBody Object object, @PathVariable int id) {
+        this.restTemplate.put(url+"cars/update/"+id, object);
         return this.showById(id);
     }
 
